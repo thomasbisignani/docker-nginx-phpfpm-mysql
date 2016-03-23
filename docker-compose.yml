@@ -1,0 +1,28 @@
+nginx:
+  build: ./build/nginx/
+  ports:
+    - "8080:80"
+  volumes_from:
+    - phpfpm
+  links:
+    - phpfpm
+
+phpfpm:
+  build: ./build/phpfpm/
+  ports:
+    - "9000:9000"
+  working_dir: /var/www
+  volumes:
+    - $PWD/sample:/var/www
+  links:
+    - mysql
+
+mysql:
+  image: mysql
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: foobar
+    MYSQL_USER: myuser
+    MYSQL_PASSWORD: mypassword
+    MYSQL_DATABASE: docker
