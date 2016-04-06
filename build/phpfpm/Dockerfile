@@ -1,6 +1,6 @@
 FROM php:5.6-fpm
 
-MAINTAINER Thomas Bisignani <contact@thomsbisignani.com>
+MAINTAINER Thomas Bisignani <contact@thomasbisignani.com>
 
 RUN docker-php-ext-install mysqli \
     && docker-php-ext-install pdo \
