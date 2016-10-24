@@ -1,5 +1,5 @@
 # docker-nginx-phpfpm-mysql
-This Docker demo is a simple web stack based on 3 official images.
+This Docker demo is a simple web stack based on 4 official images.
 
  - [Nginx][1] (nginx:latest)
  - [PHP-FPM][2] (php:7.0-fpm)
